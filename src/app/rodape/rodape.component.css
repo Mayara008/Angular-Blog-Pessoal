@@ -1,0 +1,30 @@
+ul.social-network{
+    list-style: none; /* Para tirar os pontos do lado dos icones*/
+     /* Seria para colocar um ao lado do outro, mas não está funcionando*/
+    padding: 0;
+}
+
+ul.social-network li{
+    display: inline; /*Ele tentou usar na ul.social-network sem o li , mas não funcionou , teve que abrir essa li*/
+    margin: 0;
+    padding: 5px; /*Para aumentar o espaçamento  na li*/
+}
+
+/* Como todos os icones tem o " fa " como class, vamos referencia-la para mudar os icones*/
+.fa{
+    font-size: 35pt; /*Para Aumentar o icone que está como fonte*/
+    color:  white; /* Mudar as cores dos icones aqui referenciado*/
+    padding: 10px; /*Para aumentar o espaçamento entre os icones*/
+}
+/* para passa o mouse e mudar de cor, vou refenciar a classe a baixo com o houver e color. */ 
+.fa-facebook-square:hover{
+    color: #3b5998;
+}
+
+.fa-instagram:hover{
+    color: #c13584;
+}
+
+.fa-linkedin-square:hover{
+    color: #0072b1;
+}
