@@ -1,0 +1,18 @@
+#img-bg{
+    background-image: url(../../assets/img/pc.jpg); /* referencia a imagem para a pagina */
+
+    min-height: 695px; /*  */
+
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /*  */
+    background-size: cover; /* Preencher todo espaço que tem com a imagem */
+}
+
+
+/* Pq a imagem está no lado direto, questionar o prefessor, ficou confuso */
+
+/*  */
+
+/*  */
+
+/*  */
