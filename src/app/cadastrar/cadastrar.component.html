@@ -27,16 +27,16 @@
                             <input [(ngModel])='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto"> 
                         </div>
 
-                        <!--Fiz vom o priofessor vai vir a aula-->
+                        <!-- -->
                         <div class="form-group">
                             <label for="dataNascimento">Data de nascimento </label>
                             <input [(ngModel])='user.dataNascimento' class="form-control" type="date" name="dataNascimento" id="dataNascimento" placeholder="dd/mm/aaaa"> 
                         </div>
-                        <!--Fiz vom o priofessor vai vir a aula-->
+                        <!-- -->
 
                         <div class="form-group">
                             <label for="senha">Senha</label>
-                            <input(input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Seu senha"> 
+                            <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Seu senha"> 
                         </div>
 
                         <div class="form-group">
@@ -56,7 +56,7 @@
                         <!-- Vou colocar os botões dentro de uma div, para poder centralizar eles-->
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn  btn-danger mr-4" routerLink='/entrar'>Cancelar</button>
-                            <button type="submit" class="btn btn-success" (click)='Cadastrar()'>Cadastrar</button>
+                            <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
                             <!-- Os meus botões ficam grudados, pq?  -->
                         </div>
                     </div>

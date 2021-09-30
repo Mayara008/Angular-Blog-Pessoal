@@ -21,8 +21,4 @@ export class AuthService {
   cadastrar(user: User): Observable<User>{
     return this.http.post<User>('http://localhost:8080/usuarios/cadastrar', user)
   }
-
-
-// Todo código que estiver **, foi feito com o professor 
-
-//htpps:// herokuapp.com
+}

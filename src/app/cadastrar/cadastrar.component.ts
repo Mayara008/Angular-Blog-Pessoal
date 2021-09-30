@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/User';
-import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -24,13 +23,13 @@ export class CadastrarComponent implements OnInit {
     window.scroll(0,0)
   }
 
-  ConfirmSenha(event: any) {
-    this.confirmarSenha = event.targe.velue
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value
 
   }
 
   tipoUser(event: any){
-    this.tipoUsuario = event.target.velue
+    this.tipoUsuario = event.target.value
   }
   
   cadastrar(){
