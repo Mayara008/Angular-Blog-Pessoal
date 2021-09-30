@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Feliz aniversário JUUUUH !!!!! ';
+
+  // Todo código que estiver **, foi feito com o professor
+  
+  // constructor(){}(public )
 }

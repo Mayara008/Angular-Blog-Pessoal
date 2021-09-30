@@ -9,4 +9,5 @@ export class User{
     public tipoUsuario: String ;
     public foto: String ;
 	public postagem: Postagem[]
+  tipo: string;
 }
