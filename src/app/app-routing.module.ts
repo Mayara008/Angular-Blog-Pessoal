@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { TemaComponent } from './tema/tema.component';
 
 /* Criar uma pagina que eu quero que seja acessada, por qualqer pessoa de forma internamente, por qualqer componente internamente,preciso criar a ROTA dessa pgina,um exemplo é o {path:'inicio', component:InicioComponent} */
 const routes: Routes = [ /* Array de objeto de rotas */ 
@@ -15,12 +16,14 @@ const routes: Routes = [ /* Array de objeto de rotas */
   {path:'entrar', component:EntrarComponent},
   {path:'cadastrar', component:CadastrarComponent},
 
-  {path:'inicio', component:InicioComponent} /*A rota do meu inicio está criada */
+  {path:'inicio', component:InicioComponent},/*A rota do meu inicio está criada */
   /*  Como referencia um objeto? com {} e dentro da chave vamos colocar os atributos dos objetos */
   /*path((CAMINHO)string que desejamos para a nossa rota,ou seja, nome da minha rota) */
   /*component(passamos o nome do component que desejamos adicionar para a nossa rota. pra qual componente essa rota vai)*/
   /* Essa rota vai para o componente InicioComponent , e qnd vc dá enter já dá o import lá em cima*/
   /* pra separa os meus objetos dentro do arrey, preciso de virgula */
+
+{path: 'tema', component: TemaComponent}
 ];
 
 

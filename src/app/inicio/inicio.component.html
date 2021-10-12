@@ -104,14 +104,16 @@
             </div>
 
             <div class="form-group">
-                <!--    -->
-                <label for="texto">Escolha um tema ou <a href="">cadastre um novo</a>: </label>
+                <!--  Esse routerLink="" é para direcionar para rotas internas   -->
+                <!--Traferi o data-dismiss do tema para o cadstre, e antes desse código a tela fica cinza pq ela não era fechada-->
+                <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>: </label>
                 <select name="tema" id="tema" class="form-control" >
                     <option value="">Temas</option>
                 </select>
             </div>
         </div>
         <div class="modal-footer">
+            <!--è a propriedade responspavel em fechar o Modal (data-dismiss)-->
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
         <button type="button" class="btn btn-success">Publicar</button>
         </div>
