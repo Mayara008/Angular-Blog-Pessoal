@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* Esse Style pode ser usada de forma global, tudo que colocar aqui vai afetar todo o documento  */
+/*  */
+/*  */
+
+html 
+{
+    scroll-behavior: smooth;  /* Quer dizer que toda minha tela vai rolar de forma suave. */
+}

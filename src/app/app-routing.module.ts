@@ -4,21 +4,43 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 
-const routes: Routes = [
+/* Criar uma pagina que eu quero que seja acessada, por qualqer pessoa de forma internamente, por qualqer componente internamente,preciso criar a ROTA dessa pgina,um exemplo é o {path:'inicio', component:InicioComponent} */
+const routes: Routes = [ /* Array de objeto de rotas */ 
+  /* Primeiro objeto será rota entrar */
 
-  {path: '', redirectTo: 'entrar', pathMatch: 'full' }, //Toda vez que tiver for vazio, ele vai para o componete entrar abaixo. 
+  
+  /*Ele não tem nenhuma rota, como faço pra ele ir pra uma rota especifica? Basta criar um Path vazio (como está a baixo|path:'') com um redirectTo para direcionar a rota que vc quer ('entrar') e da rota que vc quer ele leva para o componente correspondente ('EntrarComponent') e logo em seguida outro atributo  (pathMatch:'full') pra ele trazer toda a rota  */
+  {path:'', redirectTo:'entrar', pathMatch:'full' }, //Toda vez que tiver for vazio, ele vai para o componete entrar a baixo. 
 
   {path:'entrar', component:EntrarComponent},
-  {path: 'cadastrar', component: CadastrarComponent},
+  {path:'cadastrar', component:CadastrarComponent},
 
-  {path: 'inicio', component: InicioComponent}
-
-
+  {path:'inicio', component:InicioComponent} /*A rota do meu inicio está criada */
+  /*  Como referencia um objeto? com {} e dentro da chave vamos colocar os atributos dos objetos */
+  /*path((CAMINHO)string que desejamos para a nossa rota,ou seja, nome da minha rota) */
+  /*component(passamos o nome do component que desejamos adicionar para a nossa rota. pra qual componente essa rota vai)*/
+  /* Essa rota vai para o componente InicioComponent , e qnd vc dá enter já dá o import lá em cima*/
+  /* pra separa os meus objetos dentro do arrey, preciso de virgula */
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports:[RouterModule.forRoot(routes)],
+  exports:[RouterModule]
 })
 export class AppRoutingModule { }
+
+
+/*Toda q vez que eu criar um novo componente que eu quiser que ele seja acessado, eu vou entrar nessa tela "app-routing.modules.ts"  */
+
+
+/* */
+
+/* */
+
+/* */
+
+/* */
+
+
+

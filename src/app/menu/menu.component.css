@@ -1,8 +1,8 @@
 .fs-16{
-    font-size: 16pt;
+    font-size: 16pt; /*Pra aumentar a letra do nome do usuario */
 
 }
 
 a{
-    cursor: pointer;
+    cursor: pointer; /* Toda tag <a> será um pointer, que significa quando pairando o cursor sobre links será tipicamente uma mão. */
 }

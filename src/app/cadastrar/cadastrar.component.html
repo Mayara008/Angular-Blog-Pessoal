@@ -1,53 +1,75 @@
-<!-- Está pegando um container fluid inteiro, para pegar toeda a tela. -->
-
-<div class="container-fluid"> <!-- Pega tudo -->
+<!-- Está pegando um container fluid inteiro, para pegar toda a tela. -->
+<div class="container-fluid"> <!-- Pega toda tela -->
 
     <div class="row">
 
         <div class="col-md-6" id="img-bg">  </div>
             <!-- Essa col será para as 6 colunas do lado direito -->
             <div class="col-md-6 mt-5 mb-5"> 
-                <!--  Aqui vou centralizar todo o conteúdo, vai utilziar apenas 6 colunas, e por ser pouco, o meu conteúdo será jogado para esquerda de forma automatica. Por isso vou colocar o d-flex -->
+                <!--mt-5(para classes que definem margin-top(margem superior))-->
+                <!--mb-5( para classes que definem margin-bottom(margem inferior))-->
+                <!--  Aqui vou centralizar todo o conteúdo, vai utilizar apenas 6 colunas, e por ser pouco, o meu conteúdo será jogado para esquerda de forma automatica. Por isso vou colocar o d-flex justify-content-center , para centraliza-las -->
                 <div class="row d-flex justify-content-center"> 
-                    <div class="col-md-10">
+                    <div class="col-md-10"> <!-- (estou utilizando 10 coluans médias)-->
                         <h1 class="text-center">Cadastro</h1>
 
                         <div class="form-group">
                             <label for="nome">Nome</label>
+                            <!--label(rótulo, elemento do formulário que permite o "clique")-->
+                            <!--for(é um atributo q faz um tipo de link entre a label e o input. Logo o for tem que apontar para o ID do input. ) -->
+                            <!-- dentro do input tem o [(ngModel)] ele lê tudo que é escritono input, geralmente precisa ficar no começo. e serve para identifcar Letrar maiores no meio das frases  -->
                             <input [(ngModel)]='user.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome" > 
+                            <!--input(entrada)-->
+                            <!--type(é um atributo chamado tipo,o tipo de controle a ser exibido, nesse caso texto.)-->
+                            <!--name(O nome do controle, que é enviado junto com os dados do formulário.)-->
+                            <!--placeholder((marcador de posição) Uma dica para o usuário do que ele pode inserir no controle(caixa de texto)dica sobre o formato que o conteúdo deveria ter.)-->
                         </div>
 
                         <div class="form-group">
                             <label for="usuario">Usuário</label>
-                            <input [(ngModel])='user.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário"> 
+                            <!--label(elemento do formulário que permite o "clique")-->
+                            <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário"> 
+                            <!--O input está recebendo um user.usuario pq no campo "Usuário" dentro da tag label eu espero que sejá digitado o nome do usuário -->
+                            <!--O user. (está aparecendo aqui pq eu declarei ele no componente cadastrar.ts (user: User = new User) ou seja, se eu nãi declarar ele não aparece)-->
                         </div>
 
                         <div class="form-group">
                             <label for="foto">Link da Foto</label>
-                            <input [(ngModel])='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto"> 
-                        </div>
+                            <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto"> 
+                        </div> <!--No objeto user. eu quero o campo foto-->
 
-                        <!-- -->
+                        <!--  -->
                         <div class="form-group">
                             <label for="dataNascimento">Data de nascimento </label>
-                            <input [(ngModel])='user.dataNascimento' class="form-control" type="date" name="dataNascimento" id="dataNascimento" placeholder="dd/mm/aaaa"> 
+                            <input [(ngModel)]='user.dataNascimento' class="form-control" type="date" name="dataNascimento" id="dataNascimento" placeholder="dd/mm/aaaa"> 
                         </div>
                         <!-- -->
 
                         <div class="form-group">
                             <label for="senha">Senha</label>
+                            <!--.....04-vou criar um evento de input (input), os eventos aqui no Angular ficam dentro de paretenses e não possuem mais aquelas palavras on..-->
+                            <!--.....05-nesse envento input ele chama um método(O método que foi criado agora foi o confirmSenha) e esse confirmSenha espera um evento JS que sera ($event)-->
+                            <!--.....06-Ao receber esse evento ele precisa pegar o valor desse (input) e para pegar o valor desse input, tem que criar uma variável no componente cadastrar ts, para amarzenar esse valor. -->
                             <input (input)='confirmSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Seu senha"> 
-                        </div>
+                        </div> <!---->
 
                         <div class="form-group">
+                            <!--.....01-Para confirmar senha vamos criar um novo médoto chamado (confirmSenha) lá no componente cadastrar ts..-->
+                            
                             <label for="ConfirmSenha">Confirmar Senha</label>
-                            <input [(ngModel])='userlogin.senha' class="form-control" type="password" name="ConfirmSenha" id="ConfirmSenha" placeholder="Confirme sua Senha">
+                            <!--.....03-Depois que o método foi criado, eu não vou jogar a senha direto dentro do meu objeto/variavel('user.senha') -->
+                            <input [(ngModel)]='user.senha' class="form-control" type="password" name="ConfirmSenha" id="ConfirmSenha" placeholder="Confirme sua Senha">
+                            <!--'user.senha'(o 'senha', é o campo eu quero que esse input insira informação, que nesse caso é Senha, pq vou digitar minha senha ) -->
                         </div>
                         
                         <div class="form-group">
                             <label for="tipo">Tipo de Usuário</label>
-                            <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'> 
+                            <!--.....13-Agora não vamos mais usar o input, vamos utilizar o (change) pq qnd vc coloca um select, vc muda, mudei minhas opções de escolha.  -->
+                            <!--.....14-Quando vc coloca o selec, vc muda, mudei o option e ficou  (change)= , e para que essa mudança ocorra eu chamo o 'tipoUser($event)' , copiei o nome do meu método e passo um evento para ele.-->
+                            <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                                <!--E esse ($event) vai pegar o (value="normal") / (value="adm") --> 
                                 <option>Selecione um tipo de usuário: </option>
+                                <!--.....09-para selecionar o tipo de usuario, temos que utilizar o (value="normal") e (value="adm") do option, E para pegar esse value temos que criar um novo método no componente de cadastrar ts, chamado tipoUser(){} -->
                                 <option value="normal">Normal</option>
                                 <option value="adm">Administrador </option>
                             </select>
@@ -55,9 +77,11 @@
                         
                         <!-- Vou colocar os botões dentro de uma div, para poder centralizar eles-->
                         <div class="d-flex justify-content-center">
+                            <!-- Quando apertar o cancelar eu voltar para entrar, nesse caso é só colocar o (routerLink='/entrar'), isso ocorre pq estou dando a rota para onde quero voltar atráves do (routerLink='/entrar') -->
                             <button type="submit" class="btn  btn-danger mr-4" routerLink='/entrar'>Cancelar</button>
+                            <!--...B-Foi criado o evento cadastrar() no componente.ts que será chamado aqui no html no botão cadastrar atráves do evendo de (click)= PARA quando eu clicar no botão chamar o cadastrar p/ realizar o cadastro do meu usuario. e ele chama a função/método 'cadastrar()' e não passa nenhum parametro que seria o event. -->
                             <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
-                            <!-- Os meus botões ficam grudados, pq?  -->
+                            <!-- Era on-click , agora È APENAS (click) entre parenteses.-->
                         </div>
                     </div>
                 </div>
@@ -74,8 +98,10 @@
 
 
 <!-- console log -->
-<!--  -->
-<!--  -->
-<!--  -->
+
+<!-- Pra implementar meu cadastro, eu preciso aqui no html, saber tudo que está escrito no input, e para isso eu pego o módulo do angular chamado formsModule e coloco no app.modules.ts que será importado  -->
+
+
+
 <!-- -->
 

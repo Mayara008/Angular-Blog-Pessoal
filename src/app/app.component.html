@@ -1,14 +1,24 @@
 
+<!-- Como faz para rora ficar dinamica? -->
+<!-- router-outlet((tomada do roteador)Ele vai deixar as rotas dinamicas) -->
 
+
+
+
+<!--<app-menu *ngIf='auth.logado()'></app-menu>--> <!--Logado é um método e todo método é acompanhado por um parenteses.-->
+
+<!--<router-outlet></router-outlet>-->
+
+<!--<app-rodape *ngIf='auth.logado()'></app-rodape>--> <!--Agora o menu e rodapé só vai aparece quando meu usuario estiver logado e só estará logado qnd o token for diferente de vazio. -->
 <app-menu></app-menu>
+<app-inicio></app-inicio> 
+<app-rodape></app-rodape>
+<!--
+<app-cadastrar></app-cadastrar> 
 
-<router-outlet></router-outlet>
 
-<app-rodape></app-rodape> 
-
-<!--<app-entrar></app-entrar> 
-
-<app-cadastrar></app-cadastrar> -->
-
+<app-entrar></app-entrar> 
+ 
+-->
 
 

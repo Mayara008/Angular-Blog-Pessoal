@@ -1,9 +1,9 @@
-#img-bg{
+#img-bg{ /*Estou referenciando a imagem do html */
     background-image: url(../../assets/img/caderno.jpg); /* referencia a imagem para a pagina */
 
-    min-height: 695px; /*  */
+    min-height: 695px; /* tamanho exato da tela  */
 
     background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /*  */
+    background-repeat: no-repeat; /* Não repetir a imagem */
     background-size: cover; /* Preencher todo espaço que tem com a imagem */
 }

@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,6 @@ import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { from } from 'rxjs';
 import { InicioComponent } from './inicio/inicio.component';
 
 
@@ -26,9 +26,13 @@ import { InicioComponent } from './inicio/inicio.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule //Para pegar tudo que está escrito no Input do cadastrar.html
   ],
-  providers: [],
+  providers: [{ //Com o (import { HashLocationStrategy, LocationStrategy } from '@angular/common';) e os dois código a baixo eles auxiliam para que o id=postagem possa chamar no href de ver postagens q para ele funcionar de forma interna e qnd clicar no botão "VER POSTAGENS" ele possa direcionar para as postagens que estão a baixo na pagina.
+    
+    provide: LocationStrategy, //Ele ajuda o angular a não se perder nas rotas
+    useClass: HashLocationStrategy //Ele ajuda o angular a não se perder nas rotas
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

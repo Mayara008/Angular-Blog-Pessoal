@@ -6,6 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    /* Para inicializar minha propridade (id) no User.ts em um dos atributos (id), é necessário configurar no arquivo (tsconfig.json) e lá vou colocar:  ("strictPropertyInitialization": false,) ele não vai solicitar que todas as propriedades que eu adicionar em classes seja inicializada, ou seja esse (id) fica sem erro */
     "strictPropertyInitialization": false, //Resolver problema das models sem construtor, pois não solicita inicialização dos atributos.
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,

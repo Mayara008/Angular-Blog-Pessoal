@@ -1,1 +1,130 @@
-<p>inicio works!</p>
+<div class="container-fluid">
+
+    <div class="row bg-secondary d-flex align-items-center"> <!--Esse  bg-secondary , é o Cinza do Bootstrap, ele estando aqui modifica toda a cor de fundo da pagina. -->
+        <!--Estou usando o (d-flex align-items-center" - alinhar o alinhamento dos itens de forma vertical, eixo Y) Tem que ser nessa Row pq ela é a principal q engloba minhas colunas, nesse caso é a foto e do "seja bem vindo".  -->
+        <div class="col-md-6"> <!--Essa representa a coluna da esquerda, que tem o "Seja bem vindo" -->
+            <!--Vou precisar separa o conteúdo com duas linhas. então vou criar 2 row.-->
+            <div class="row d-flex justify-content-center">
+                    <div class="col-md-6 text-white"> <!--Como eu quero que tudo dentro dessa div fique de apenas uma cor, vou colocar o text-white -->
+                        <h1 class="fs-54">Seja bem Vindo(a)!</h1>
+                        <!--fs - abreviação de Font size, essa variavel vou criar e referencia-la no css-->
+                        <h5 class="fs-18">expresse aqui os seus pensamentos e opiniões!</h5>
+                    </div>
+            </div>   
+
+            <div class="row d-flex justify-content-center mt-3 mb-5"> <!--Row que vai englobar meus botões-->
+            
+                    <div class="col-md-6"> <!--Precisa dessa col para se alinha com a col anterior-->
+                        <!--Botão 1 -->
+                        <!-- Botão para acionar modal -->
+                        <!--(data-toggle="modal" data-target="#novaPostagem") São as propriedade que fazem esse modal aparecer e como eu qeuro que outro botão apareca vou colocar essas propriedades lá.-->
+
+
+                        <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novaPostagem">Nova postagem</button>
+                        <!--Para separar esse dois botões aqui nesse primeiro vou colocar mr-2  -->
+                        <!--Será um novo botão que vai redirecionar parar minhas portagens que estará em baixo que será "Ver postagem", porém, será com uma tag <a>. como ele vai direcionar,  ele tem que ser um link um <a>. -->
+                        <!--Botão 2 -->
+                        <a class="btn btn-outline-light" href="#postagens">Ver postagem</a>
+                        <!--Para fazer um link ter estilo de botão? è só criar uma classe e colocar btn btn  (class="btn btn-outline-light") o outline-light pq ele está com a linh apra fora e qnd passo o mouse ele motra, muda de cor. -->
+                    </div>
+            </div>
+        </div>    
+            
+            <div class="col-md-6 d-flex justify-content-center"><!--Essa representa a coluna da direita, que tem a imagem -->
+                <img src="../../assets/img/Comfort zone-rafiki.png" alt="" width="500px" height="500px">
+
+        </div>
+    </div>
+</div>
+
+<!--Vou sair do Container fluid pq eu quero que esse conteúdo fique centralizado.--><!--Nav de todas as POSTAGENS, minhas Postagens e postagens por Tema -->
+<div class="container mb-5 mt-5" id="postagens"> <!--(mb-5 mt-5) Dá um espaço em todo o meu container -->
+    <!--Estou criando um id=postagem para chamar no href de ver postagens q para ele funcionar de forma interna eu preciso colocar 2 provide de localização no app.modules.ts -->
+    <nav>
+        <!--Para centralizar esses 3 links (d-flex justify-content-center) -->
+        <div class="nav nav-tabs d-flex justify-content-center " id="nav-tab" role="tablist"> 
+            <!--Link-->
+            <!--active é pq esse será o primeiro a ser mostrado qnd for carregado -->
+            <!--(text-secondary) - Texto cinza -->
+            <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>
+            
+
+            <!--Link-->
+            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas Postagens</a>
+
+            <!--Link-->
+            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab" href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por tema</a>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+    
+        <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+            <!--Conteudo da postagem-->
+            Todas as Postagens
+        </div>
+        
+        <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+            <!--Conteudo da postagem-->
+            Minhas postagens
+        </div>
+        
+        <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
+            <!--Conteudo da postagem-->
+            Postagens por tema
+            
+        </div> 
+    </div>
+</div>
+<!--/Nav de todas as POSTAGENS, minhas Postagens e postagens por Tema -->
+
+
+<!--MODAL-->
+<!--Ele só vai aparecer na minha pagina quando eu clicar no botão-->
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <!--Aqui é onde vai todo o formulário-->
+            <div class="form-group">
+                <!--A label vai chamar o titulo da postagem-->
+                <label for="titulo">Titulo</label>
+                <input type="text" class="form-control" id="titulo" placeholder="Digite o título">
+            </div>
+
+            <div class="form-group">
+                <!--    -->
+                <label for="texto">Texto</label>
+                <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <!--    -->
+                <label for="texto">Escolha um tema ou <a href="">cadastre um novo</a>: </label>
+                <select name="tema" id="tema" class="form-control" >
+                    <option value="">Temas</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Publicar</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--/MODAL-->

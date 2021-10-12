@@ -1,31 +1,39 @@
 <div class="container-fluid">
     <!-- Para ficar centralizado no meio da pagina, tem que ser o alinhamento vertical. eu quero que duas col fiquem nesse alinhamento. usando o d-flex align-items-center. -->
-    <div class="row d-flex align-items-center">
-        <div class="col-md-6">
+     <!-- container-fluid(componente do bootstrap q garante q o layout vai  seguindo até o final da paginas)-->
+    <div class="row d-flex align-items-center"> <!--Está englobando todo meu conteúdo-->
+    <!--row(Ela delimita as linhas do container, ou seja, das colunas de forma "individual")-->
+    <!--d-flex(Caixa que vai envolver todos os item do container)-->
+            <div class="col-md-6"> <!--6 colunas médias a esquerda-->
+    <!--col-md-6(esse código como um todo pode ser considerado um flex item, pq envolve itens internos, como colunas,linhas, etc.. e esse col-md-6 representa 6 colunas médias)-->
 
             <div class="row d-flex justify-content-center"> <!--Tudo que estiver dentro dessa row, eu vou querer centralizado.-->
-                <div class="col-md-6">
+                <div class="col-md-6"> 
                     
                     <h1 class="text-center mb-3">Entrar</h1>
                         <!-- Todo código que estiver com um asteristico representa o código da caixa que o usuario precisa digitar se nome. E ela precisa estar dentro desse <h1>-->
                         <div class="form-group"><!-- * -->
-                            <label for="usuario">Usuário</label><!-- * -->
+                            <label for="usuario">Usuário</label><!-- Nome que vai a cima da caixa de digitar -->
+                            <!--no gnModel tem que referenciar a variavel, q precisa estanciar essa variável no ts.-->
                             <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário"> <!-- * -->
-                        </div>
+                                    <!--'userLogin. (estou refenriando coisas relacionadas com o usuario, após o ponto eu escolho qual tributo)-->
+                        </div> 
 
-                        <div class="form-group">
+                        <div class="form-group"><!-- * -->
                             <label for="senha">Senha</label>
-                            <input  [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                            <input  [(ngModel)]='userLogin.senha' class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha"><!-- * -->
                         </div>
                         <!--Questionar o PROFESSOR, o pq de não ocorrer o espaçamento de forma automatica. -->
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-success" (click)='entrar()' >Entrar</button>
-                        </div>
+                        </div> <!--Estou criando um evento de click  (click)= , que vai chamar um MÉTODO de 'entrar()' -->
 
-                        <hr class="mt-5 mb-5">
+                        <hr class="mt-5 mb-5"> <!--Cria uma linha que separa a frase a baixo com o botão a cima-->
 
                         <p class="text-center">
-                            Não tem uma conta? <a routerLink='/cadastrar'>Cadastre-se"></a> <!-- Toda vez que eu clientr em cadastre-se , lee vai para rota cadastrar por conta do RouterLink -->
+                            Não tem uma conta? <a routerLink='/cadastrar'>Cadastre-se</a> <!-- Toda vez que eu clientr em cadastre-se , ele vai para rota cadastrar por conta do RouterLink -->
+                            <!-- No Angular, o <a href> não é usado para rotas internas, só externas. Nesse caso vamos usar o (routerLink='/nomedarota')  -->
+                            <!--Toda vez que apertar em cancelar tem que voltar para o login, nesse caso vou fazer a mesma coisa, mas no componente CADASTRAR HTML no botão cancelar-->
                         </p>
 
                 </div>
@@ -43,6 +51,24 @@
 
 
 
-<!-- * -->
+
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->
 
 <!--  -->

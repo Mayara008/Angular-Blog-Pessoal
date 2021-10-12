@@ -1,25 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary"> <!--bg-secondary(Muda a cor de fundo da inha navbar(MEnu))-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto d-flex align-items-center">
+        <!-- d-flex align-items-center(Para centralizar verticalmente todos os meus elemwntos.) -->
+        <!--mr-auto(Está falando que a margem é auto, vai jogar o conteúdo para esquerda)-->
         <li class="nav-item active">
-            <img src="assets/img/generation.jpg" alt="" width="50px" height="50px" class="img-fluid rounded-circle"> <!--img-fluid , vai deixar minha imagem resposiva-->
+          <!--Conceito de interpolação, que é abrir e fechar duas chaves, e dentro das aspas do src vou digitar a variavel que possue o link da foto que é a varia´vel foto que referenciei no menu ts como  (foto = environment.foto) que recebe o environmentq qnd o usuario estiver logado.-->
+            <img src="{{foto}}" alt="Imagem do user" width="50px" height="50px" class="img-fluid rounded-circle"> <!--img-fluid , vai deixar minha imagem resposiva - rounded-circle, p/ deixar a imagem redondinha.-->
         </li>
         <li class="nav-item pl-3">
-            <p class="m-0 font-weight-bold text-white fs-16">Nome do usuário </p>
-        </li>
+            <!--pl-3(padding left, preenchimento á esquerda. Padding lateral)-->
+            <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}} </p>
+        </li> <!--Tag <P> sempre tem uma margem para baixo. Por isso vou usar uma class de margem 00 (m-0) Para ficar alinhado -->
+          <!-- font-weight-bold (Deixa em negrito) -->
+          <!--text-white(para deixar o texto branco)-->
+          <!--fs-16 ( font-size: 16pt, DEfinir o tamanho do nome do meu usuario )-->
+          <!--Estou interpolando meu nome com a varialve nome -->
         
         <li class="nav-item pl-3">
-            <a href="">
+            <a href=""> <!--<a href=""></a>(PAra tranformar em um link basta criar essa tag <a> e colocar dentro dela o que quero transformar em link )  -->
                 <p  class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
             </a>
         </li>
       </ul>
-
+<!-- Como eu quero deixar o meu sair do outro lado da da navbar, eu vou criar essa nova lista, pq na primeira ul eu quero que tenha o controle da foto-->
       <ul class="navbar-nav ml-auto d-flex align-items-center">
+          <!--ml-auto(Agora está com ml para ser jogado para a direita)-->  
         <li class="nav-item pl-3">
-            <a class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            <a (click)='sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            <!--Esse sair teve q ser criado um método no menu.ts-->
         </li>
+
+
+    
