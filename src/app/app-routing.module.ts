@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
@@ -23,7 +25,12 @@ const routes: Routes = [ /* Array de objeto de rotas */
   /* Essa rota vai para o componente InicioComponent , e qnd vc dá enter já dá o import lá em cima*/
   /* pra separa os meus objetos dentro do arrey, preciso de virgula */
 
-{path: 'tema', component: TemaComponent}
+{path: 'tema', component: TemaComponent},
+//para criar um path no objeto de rotas que recebe um parâmetro funciona
+//assim:"nome-da-rota/:paramentro"
+{path: 'tema-edit/:id', component: TemaEditComponent},
+{path: 'tema-delete/:id', component: TemaDeleteComponent}
+
 ];
 
 

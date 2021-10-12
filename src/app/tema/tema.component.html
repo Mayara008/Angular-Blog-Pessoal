@@ -61,8 +61,9 @@
                         <td>{{item.descricao}}</td>
                         <!--Os botões vão ficar para a direita d-flex justify-content-end-->
                         <td class="d-flex justify-content-end">
-                            <button class="btn btn-info mr-3">Editar</button>    
-                            <button class="btn btn-danger">Apagar</button>
+                            <!--O botões vão funcionar com esse link do routerLink-->
+                            <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', item.id]" >Editar</button>    
+                            <button class="btn btn-danger" [routerLink]="['/tema-delete', item.id]" >Apagar</button>
                         </td>
 
 
