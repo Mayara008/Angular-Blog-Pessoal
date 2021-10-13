@@ -63,7 +63,7 @@
             <!--CARD 1-->
             <div class="card-columns">
                                 <!--Mudou de listaPostagens para (user.Postagem)-->
-                <div class="card text-center" *ngFor='let item of user.Postagem'>
+                <div class="card text-center" *ngFor='let item of user.postagem'>
                     <div class="card-body">
                         <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <small class="text-muted"> Tema: {{item.tema.descricao}} </small>
@@ -90,7 +90,7 @@
             <!--CARD 2-->        
             <div class="card-columns">
                                 <!--Mudou de listaPostagens para (user.Postagem)-->
-                 <div class="card text-center" *ngFor='let item of user.Postagem'>
+                 <div class="card text-center" *ngFor='let item of user.postagem'>
                     <div class="card-body">
                         <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <small class="text-muted"> Tema: {{item.tema.descricao}} </small>
@@ -98,6 +98,11 @@
                                 <p class="card-text"><small class="text-muted">
                                     {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH/mm'}}
                                 </small></p>
+                                    <!--Botões-->
+                                <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+                                <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+
+
                 
                     </div>
                 </div>
@@ -112,7 +117,7 @@
             <!--CARD 3-->     
             <div class="card-columns" *ngFor='let tema of listaTemas'>
                                 <!--Mudou de user.Postagem para ( tema.Postagem)-->
-                <div class="card text-center" *ngFor='let item of tema.Postagem'>
+                <div class="card text-center" *ngFor='let item of tema.postagem'>
                     <div class="card-body">
                         <h5 class="card-title m-0">{{item.titulo}}</h5>
                                 <p class="card-text mt-3">{{item.texto}}</p>
@@ -141,11 +146,6 @@
 
 
 
-
-
-
-
-
 <!--/Nav de todas as POSTAGENS, minhas Postagens e postagens por Tema -->
 <!--MODAL-->
 <!--Ele só vai aparecer na minha pagina quando eu clicar no botão-->
@@ -160,6 +160,8 @@
         </div>
         <div class="modal-body">
             <!--Aqui é onde vai todo o formulário-->
+            
+            <!--FORM-GROUP-->
             <div class="form-group">
                 <!--A label vai chamar o titulo da postagem-->
                 <label for="titulo">Titulo</label>
@@ -182,6 +184,9 @@
                     </option>
                 </select>
             </div>
+            <!--/FORM-GROUP-->
+
+
         </div>
         <div class="modal-footer">
             <!--è a propriedade responspavel em fechar o Modal (data-dismiss)-->
