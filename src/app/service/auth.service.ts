@@ -15,17 +15,17 @@ export class AuthService {
   ) { }
 
   entrar(userLogin: UserLogin): Observable<UserLogin>{
-    return this.http.post<UserLogin>('http://localhost:8080/usuarios/logar', userLogin)
+    return this.http.post<UserLogin>('https://darkmay.herokuapp.com/usuarios/logar', userLogin)
   }
 
   cadastrar(user: User): Observable<User>{
-    return this.http.post<User>('http://localhost:8080/usuarios/cadastrar', user)
+    return this.http.post<User>('https://darkmay.herokuapp.com/usuarios/cadastrar', user)
   }
   
   getByIdUser(id: number): Observable<User>{
-    return this.http.get<User>('http://localhost:8080/usuarios/${id}')
+    return this.http.get<User>('https://darkmay.herokuapp.com/usuarios/${id}')
   }
-
+//https://darkmay.herokuapp.com/
 
   logado(){ //para saber se o usuario está loga ou não. Esse método vai verificar se existe um token no meu environment, se ele está preenchido. E ele só é prenechido a partir do botão entrar. 
     let ok: boolean = false //'OK' é uma variavel boleana que recebe falso.

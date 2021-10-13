@@ -20,23 +20,23 @@ export class TemaService {
   //getAllTema (Nome de um tema que eu posso colocar o que preferir)
   //Está com esse nome para todos entenderem que esse método  pega todos os temas. Traduzindo getAllTema significa: obter todos os temas
   getAllTema(): Observable<tema[]>{ //Não vai reseber parametro (Que fica dentro do parenteses)
-    return this.http.get<tema[]>('http://localhost:8080/tema', this.token)
+    return this.http.get<tema[]>('https://darkmay.herokuapp.com/tema', this.token)
   }
 
   getByIdTema(id: number): Observable<tema>{
-    return this.http.get<tema>(`http://localhost:8080/tema/${id}`, this.token)
+    return this.http.get<tema>(`https://darkmay.herokuapp.com/tema/${id}`, this.token)
   }
 
   postTema(tema: tema): Observable<tema>{
-    return this.http.post<tema>('http://localhost:8080/tema', this.token)
+    return this.http.post<tema>('https://darkmay.herokuapp.com/tema', this.token)
   }
 
   putTema(tema: tema): Observable<tema>{
-    return this.http.put<tema>('http://localhost:8080/tema', tema, this.token)
+    return this.http.put<tema>('https://darkmay.herokuapp.com/tema', tema, this.token)
   }
 
   deleteTema(id: number) {
-    return this.http.delete(`http://localhost:8080/tema/${id}`, this.token)
+    return this.http.delete(`https://darkmay.herokuapp.com/tema/${id}`, this.token)
   }
 
   }

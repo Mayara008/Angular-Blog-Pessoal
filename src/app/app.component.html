@@ -5,17 +5,18 @@
 
 
 
-<!--<app-menu *ngIf='auth.logado()'></app-menu>--> <!--Logado é um método e todo método é acompanhado por um parenteses.-->
+<app-menu *ngIf='auth.logado()'></app-menu>
+<!--Logado é um método e todo método é acompanhado por um parenteses.-->
 
-<!--<router-outlet></router-outlet>-->
+<router-outlet></router-outlet>
 
-<!--<app-rodape *ngIf='auth.logado()'></app-rodape>--> <!--Agora o menu e rodapé só vai aparece quando meu usuario estiver logado e só estará logado qnd o token for diferente de vazio. -->
-<app-menu></app-menu>
-<app-tema-edit></app-tema-edit>
+<app-rodape *ngIf='auth.logado()'></app-rodape> <!--Agora o menu e rodapé só vai aparece quando meu usuario estiver logado e só estará logado qnd o token for diferente de vazio. -->
+<!--<app-menu></app-menu>
+<app-tema-edit></app-tema-edit>-->
 
 
 <!-- <app-tema></app-tema>-->
-<app-rodape></app-rodape>
+<!--<app-rodape></app-rodape>-->
 
 
 
