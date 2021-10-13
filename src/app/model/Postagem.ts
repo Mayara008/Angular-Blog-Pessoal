@@ -3,7 +3,6 @@ import { User } from "./User"; /* Estou me rederindo a esse import*/
 /* as tabelas postagem e essa de User estão relacionadas devido a esse import de 'User' aqui no postagem e o import de Postagem no User */
 
 export class Postagem {
-
     public data: Date;
     public id: number;
     public texto: string;
