@@ -5,9 +5,10 @@ export const environment = { //aqui é uma constante de um objeto environment  q
   token: '', // é aspas pq estou dentro de um objeto
   nome: '',
   id: 0, //O id é number por isso coloca zero
-  foto: '' // Foto é string e o último ão precisa de virgula. 
+  foto: '', // Foto é string e o último ão precisa de virgula. 
   //Agora para chamar o (environment) no entrar eu vou no entrar html. 
   //Sempre que a pagina for atualizada esse enrivonment é esvaziado, pq uma singoupage de aplication, ela não pode ser atualiazada. 
+  tipo: ''
 };
 
 

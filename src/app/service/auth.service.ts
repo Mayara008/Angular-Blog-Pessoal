@@ -26,7 +26,7 @@ export class AuthService {
     return this.http.get<User>('https://darkmay.herokuapp.com/usuarios/${id}')
   }
 //https://darkmay.herokuapp.com/
-
+//Esse código logado quer dizer que:
   logado(){ //para saber se o usuario está loga ou não. Esse método vai verificar se existe um token no meu environment, se ele está preenchido. E ele só é prenechido a partir do botão entrar. 
     let ok: boolean = false //'OK' é uma variavel boleana que recebe falso.
     //no código a cima, estou criando uma variavel 'OK' e determinando q ela recebe falso, isso diz que é uma variavel boleana.  
@@ -39,5 +39,15 @@ export class AuthService {
     return ok
   }
 
-  //Esse código logado quer dizer que: 
+    adm(){
+      let ok: boolean = false
+      
+      if (environment.tipo == 'adm'){
+        ok = true
+      }
+
+      return ok
+
+    }
+   
 }

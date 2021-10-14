@@ -36,7 +36,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.userLogin.nome //Vai trazer o nome do usuario que está cadastrado
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id //Traz o id do usuario que está cadastrado.
-
+      environment.tipo = this.userLogin.tipo
    
       this.router.navigate(['/inicio']) //Todo routerLink terá uma / 
       // E essa barra só aparecerá qnd quisermos referenciar para a rota q quero mandar.
