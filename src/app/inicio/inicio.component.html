@@ -62,8 +62,9 @@
             <!--Conteudo da postagem "TODAS AS POSTAGENS"-->
             <!--CARD 1-->
             <div class="card-columns">
-                                <!--Mudou de listaPostagens para (user.Postagem)-->
-                <div class="card text-center" *ngFor='let item of user.postagem'>
+                                <!-- -->
+                <div class="card text-center" 
+                *ngFor='let item of listaPostagens | orderBy : key : reverse'> <!--*************-->
                     <div class="card-body">
                         <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <small class="text-muted"> Tema: {{item.tema.descricao}} </small>
@@ -89,8 +90,8 @@
                     <!--Conteudo da postagem "MINHAS POSTAGENS - POSTAGENS POR USUARIO"-->
             <!--CARD 2-->        
             <div class="card-columns">
-                                <!--Mudou de listaPostagens para (user.Postagem)-->
-                 <div class="card text-center" *ngFor='let item of user.postagem'>
+                                <!--Mudou de -->
+                 <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
                     <div class="card-body">
                         <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <small class="text-muted"> Tema: {{item.tema.descricao}} </small>
@@ -115,7 +116,7 @@
         <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
             <!--Conteudo da postagem "POSTAGEM POR TEMA"-->
             <!--CARD 3-->     
-            <div class="card-columns" *ngFor='let tema of listaTemas'>
+            <div class="card-columns" *ngFor='let tema of listaTemas | orderBy : key : reverse'>
                                 <!--Mudou de user.Postagem para ( tema.Postagem)-->
                 <div class="card text-center" *ngFor='let item of tema.postagem'>
                     <div class="card-body">

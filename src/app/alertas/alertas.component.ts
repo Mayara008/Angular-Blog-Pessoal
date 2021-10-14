@@ -9,7 +9,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 export class AlertasComponent implements OnInit {
  //Como importar uma variavel que está en outro .... 
   @Input() message: string
-  @Input() tipo: string = 'success' //= Para receber o valor nessa váriavel
+  @Input() typo: string = 'success' //= Para receber o valor nessa váriavel
 
   constructor(
     public modal: BsModalRef

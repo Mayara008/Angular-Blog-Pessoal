@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
+
 @Component({
   selector: 'app-entrar',
   templateUrl: './entrar.component.html',
@@ -14,6 +15,7 @@ export class EntrarComponent implements OnInit {
               // UserLogin Nome do objeto tem que ser com letra Maiuscula.
                         // Instanciando com um novo (new) obejto (UserLogin()) / um novo usuario. 
   userLogin: UserLogin = new UserLogin() // Dessa forma vou conseguir usar o userLogin: como referencia no meu ngModel no html do entrar.
+  alertas: any;
 
   constructor(
     private auth: AuthService, //Injetando a dependencia do auth. é apenas uma varivel que vou chamar ele no  (this.auth.) como (entrar)
@@ -40,7 +42,7 @@ export class EntrarComponent implements OnInit {
       // E essa barra só aparecerá qnd quisermos referenciar para a rota q quero mandar.
     }, erro =>{
       if(erro.status == 500){ //Erro 500 é erro de obejto enviado errado , é algo que não existe. 
-        alert('Usúario e senha estão incorretos!') //Tendo esse tipo de rro criei um alert para mandar para meu usuario. 
+        this.alertas.showAlertDanger('Usúario e senha estão incorretos!') //Tendo esse tipo de rro criei um alert para mandar para meu usuario. 
     }
     })
   }

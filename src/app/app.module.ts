@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
+
 
 
 
@@ -45,7 +47,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     HttpClientModule,
     FormsModule, //Para pegar tudo que está escrito no Input do cadastrar.html
     //módulo de modal
-    ModalModule.forRoot()      
+    ModalModule.forRoot(),
+    OrderModule     
   ],
   providers: [{ //Com o (import { HashLocationStrategy, LocationStrategy } from '@angular/common';) e os dois código a baixo eles auxiliam para que o id=postagem possa chamar no href de ver postagens q para ele funcionar de forma interna e qnd clicar no botão "VER POSTAGENS" ele possa direcionar para as postagens que estão a baixo na pagina.
     
