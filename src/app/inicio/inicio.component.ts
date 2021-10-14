@@ -23,12 +23,14 @@ export class InicioComponent implements OnInit{
   tema: tema = new tema()
   listaTemas: tema[]
   idTema: number
+  nomeTema: string
 
   user: User = new User()
   idUser = environment.id
 
   key = 'data'
   reverse = true
+  tituloPost: string;
 
 
 
@@ -96,6 +98,27 @@ findByIdUser(){
     })
   }
 
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
+
+  findByNomeTema(){
+    if(this.nomeTema == ''){
+      this.getAllTemas()
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: tema[]) => {
+        this.listaTemas = resp
+      })
+    }
+
+  }
 }
 
 

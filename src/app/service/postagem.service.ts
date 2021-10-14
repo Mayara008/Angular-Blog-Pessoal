@@ -23,8 +23,13 @@ export class PostagemService {
   }
 
 getByIdPostagem(id: number): Observable<Postagem>{
-  return this.http.get<Postagem>(`https://darkmay.herokuapp.com/postagens/${id}` , this.token)
+  return this.http.get<Postagem>(`https://darkmay.herokuapp.com/postagens/${id}`, this.token)
 }
+
+getByTituloPostagem(titulo: string): Observable<Postagem[]>{ //Trocar a crase para ver o erro que dá. 
+  return this.http.get<Postagem[]>(`https://darkmay.herokuapp.com/postagens/titulo/${titulo}`, this.token)
+}
+
 
 postPostagem(postagem: Postagem) : Observable<Postagem>{
   return this.http.post<Postagem>('https://darkmay.herokuapp.com/postagens', postagem, this.token)
